@@ -22,7 +22,7 @@ vector<int> buildSPF(int n) {
 }
 ```
 
-After building the SPF array, we can get prime factors of any number:
+After building the SPF array, we can get prime factors of any number in:
 
 - Time: O(log n)
 - Space: O(1)

@@ -1,14 +1,15 @@
 # DFS (Binary Tree)
 
-Notes:
-- DFS is naturally recursive (pre-order, in-order, post-order); iterative versions
-  also have certain use-cases.
-- Generality: Graph -> Tree -> Binary Tree -> Binary Search Tree (general to specific).
+### Notes:
+- DFS is naturally recursive (pre-order, in-order, post-order)
+- can also be implemented iteratively
+- uses stack (call stack for recursive, explicit stack for iterative)
+
 
 - Time: O(n)
 - Space: O(h) -> O(log n) average, O(n) worst case
 
-## Recursive (uses call stack)
+## Recursive
 
 ### Pre-order (top-down)
 
@@ -47,7 +48,7 @@ void dfs(TreeNode* root) {
 }
 ```
 
-## Iterative (uses stack)
+## Iterative
 
 - Time: O(n)
 - Space: O(h) -> O(log n) average, O(n) worst case

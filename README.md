@@ -18,12 +18,12 @@ Follow these so templates stay consistent (also for AI agents editing this repo)
 ## Index
 
 ### Graphs
-- [BFS](graphs/bfs.md)
-- [DFS](graphs/dfs.md)
+- [BFS](graph/bfs.md)
+- [DFS](graph/dfs.md)
 
 ### Trees (Binary)
-- [BFS](trees/bfs.md)
-- [DFS](trees/dfs.md)
+- [BFS](binarytree/bfs.md)
+- [DFS](binarytree/dfs.md)
 
 ### Arrays
 - [Prefix / Suffix Arrays](arrays/prefix_suffix.md)

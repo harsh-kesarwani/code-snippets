@@ -1,14 +1,14 @@
 # BFS (Binary Tree)
 
-Notes:
-- BFS is naturally iterative (level-order); uses a queue.
-
+### Notes:
+- BFS is naturally iterative (level-order)
+- uses a queue
 - Time: O(n)
 - Space: O(w) -> O(n) (as w ≈ n/2)
 
 ## Level order
 
-Algorithm:
+#### Algorithm:
 - Push root to queue.
 - While queue is not empty:
     - Dequeue node, process it.
@@ -35,7 +35,7 @@ void bfs(TreeNode* root) {
 
 ## Level-aware BFS
 
-Algorithm:
+#### Algorithm:
 - Push root to queue.
 - While queue is not empty:
     - Check queue size in advance and for 'size' times:

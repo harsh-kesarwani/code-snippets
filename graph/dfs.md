@@ -1,9 +1,10 @@
 # DFS
 
-## Recursive (default)
-
 - Time: O(V + E)
 - Space: O(V)
+
+### Recursive
+default
 
 ```cpp
 unordered_set<Node*> visited;
@@ -20,3 +21,7 @@ void dfs(Node* node) {
     }
 }
 ```
+
+### Iterative
+
+TBA

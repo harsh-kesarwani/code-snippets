@@ -2,7 +2,7 @@
 
 Greatest common divisor of two integers using repeated remainders.
 
-## Recursive
+### Recursive
 
 - Time: O(log(min(a, b)))
 - Space: O(log(min(a, b)))
@@ -15,7 +15,7 @@ int gcd(int a, int b) {
 }
 ```
 
-## Iterative
+### Iterative
 
 - Time: O(log(min(a, b)))
 - Space: O(1)

@@ -1,4 +1,4 @@
-# nCr (Modular)
+## nCr (Modular)
 
 Compute `nCr % mod` using modular inverse (Fermat's little theorem, `mod` prime).
 Requires `modPow` (below).
