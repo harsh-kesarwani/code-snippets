@@ -1,5 +1,8 @@
 # SPF Array (Smallest Prime Factor)
 
+Precompute the smallest prime factor of every number up to `n` for fast
+factorization. `getPrimeFactors` then returns the distinct prime factors.
+
 - Time: O(n log log n)
 - Space: O(n)
 

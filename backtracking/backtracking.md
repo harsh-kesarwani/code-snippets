@@ -1,5 +1,11 @@
 # Backtracking
 
+Generic template: try each choice, recurse, then undo it (backtrack) to explore
+all candidates.
+
+- Time: O(b^d) branches^depth (problem-dependent)
+- Space: O(d) recursion depth
+
 ```cpp
 vector<vector<int>> solve(vector<int>& input) {
     vector<vector<int>> ans;

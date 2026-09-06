@@ -1,6 +1,10 @@
 # nCr (Modular)
 
 Compute `nCr % mod` using modular inverse (Fermat's little theorem, `mod` prime).
+Requires `modPow` (below).
+
+- Time: O(r log mod)
+- Space: O(1)
 
 ```cpp
 long long nCr(int n, int r, int mod) {
@@ -17,6 +21,11 @@ long long nCr(int n, int r, int mod) {
 ```
 
 ## Modular Exponentiation
+
+Fast `base^exp % mod` by binary exponentiation (squaring).
+
+- Time: O(log exp)
+- Space: O(1)
 
 ```cpp
 long long modPow(long long base, long long exp, int mod) {

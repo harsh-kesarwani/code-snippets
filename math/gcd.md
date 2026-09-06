@@ -1,5 +1,7 @@
 # GCD - Euclidean Algorithm
 
+Greatest common divisor of two integers using repeated remainders.
+
 ## Recursive
 
 - Time: O(log(min(a, b)))

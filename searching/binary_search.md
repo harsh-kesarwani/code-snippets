@@ -1,5 +1,11 @@
 # Binary Search
 
+Search a sorted array by halving the range each step. All variants below share
+the same complexity.
+
+- Time: O(log n)
+- Space: O(1)
+
 ## 1. Exact Search
 
 Find exact target value.
@@ -8,14 +14,14 @@ Find exact target value.
 - If `left > right`, search space is empty, loop stops.
 
 ```cpp
-int binarySearch(vector<int> v, int target) {
-    int left = 0, right = n - 1;
+int binarySearch(vector<int>& v, int target) {
+    int n = v.size(), left = 0, right = n - 1;
 
     while (left <= right) {
         int mid = left + (right - left) / 2;
-        if (a[mid] == target)
+        if (v[mid] == target)
             return mid;
-        else if (a[mid] < target)
+        else if (v[mid] < target)
             left = mid + 1;
         else
             right = mid - 1;
@@ -36,8 +42,8 @@ Find boundary: the smallest index `i` such that a given condition is true
 - If `left == right`, range collapsed, this must be the answer.
 
 ```cpp
-int firstTrue(vector<int> v, int target) {
-    int left = 0, right = n;
+int firstTrue(vector<int>& v) {
+    int n = v.size(), left = 0, right = n;
     while (left < right) {
         int mid = left + (right - left) / 2;
         if (/* condition(mid) */)
@@ -51,14 +57,14 @@ int firstTrue(vector<int> v, int target) {
 
 ### 2a. Lower Bound
 
-Condition: `arr[mid] >= target`.
+Condition: `v[mid] >= target`.
 
 ```cpp
-int lowerBound(vector<int> v, int target) {
-    int left = 0, right = n;
+int lowerBound(vector<int>& v, int target) {
+    int n = v.size(), left = 0, right = n;
     while (left < right) {
         int mid = left + (right - left) / 2;
-        if (arr[mid] >= target)
+        if (v[mid] >= target)
             right = mid;
         else
             left = mid + 1;
@@ -69,14 +75,14 @@ int lowerBound(vector<int> v, int target) {
 
 ### 2b. Upper Bound
 
-Condition: `arr[mid] > target`.
+Condition: `v[mid] > target`.
 
 ```cpp
-int upperBound(vector<int> v, int target) {
-    int left = 0, right = n;
+int upperBound(vector<int>& v, int target) {
+    int n = v.size(), left = 0, right = n;
     while (left < right) {
         int mid = left + (right - left) / 2;
-        if (arr[mid] > target)
+        if (v[mid] > target)
             right = mid;
         else
             left = mid + 1;
@@ -90,10 +96,10 @@ int upperBound(vector<int> v, int target) {
 Another version for finding lower and upper bound using an inclusive range.
 
 ```cpp
-int lowerBound(int low, int high) {
+int lowerBound(int low, int high, int target) {
     while (low <= high) {
         int mid = low + (high - low) / 2;
-        if (arr[mid] >= target)
+        if (v[mid] >= target)
             high = mid - 1;
         else
             low = mid + 1;
@@ -103,10 +109,10 @@ int lowerBound(int low, int high) {
 ```
 
 ```cpp
-int upperBound(int low, int high) {
+int upperBound(int low, int high, int target) {
     while (low <= high) {
         int mid = low + (high - low) / 2;
-        if (arr[mid] > target)
+        if (v[mid] > target)
             high = mid - 1;
         else
             low = mid + 1;
