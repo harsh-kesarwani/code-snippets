@@ -38,7 +38,7 @@ Find boundary: the smallest index `i` such that a given condition is true
 
 - Condition must be monotonic -> result changes only in one direction, e.g. `FFFFTTTTTTT`.
 - `right` should start from `n` (not `n - 1`), as the answer can be `n`.
-- Invariant: the answer is always inside the range `[left, right]`.
+- Invariant: the answer is always inside the closed range `[left, right]`.
 - If `left == right`, range collapsed, this must be the answer.
 
 ```cpp
@@ -91,10 +91,10 @@ int upperBound(vector<int>& v, int target) {
 }
 ```
 
-### 2c. Alternate (closed-range `[low, high]`)
+## 3. Alternate way for lower/upper bound
+Another version for finding lower and upper bound using an inclusive/closed range `[low, high]`.
 
-Another version for finding lower and upper bound using an inclusive range.
-
+### 3a. Upper Bound
 ```cpp
 int lowerBound(int low, int high, int target) {
     while (low <= high) {
@@ -108,6 +108,7 @@ int lowerBound(int low, int high, int target) {
 }
 ```
 
+### 3b. Upper Bound
 ```cpp
 int upperBound(int low, int high, int target) {
     while (low <= high) {
