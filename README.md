@@ -36,6 +36,7 @@ Follow these so templates stay consistent (also for AI agents editing this repo)
 - [SPF Array (Smallest Prime Factor)](math/smallest_prime_factor.md)
 - [GCD - Euclidean Algorithm](math/gcd.md)
 - [nCr (Modular)](math/ncr_mod.md)
+- [Integer k-th Root](math/kth_root.md)
 
 ### Backtracking
 - [Backtracking](backtracking/backtracking.md)
