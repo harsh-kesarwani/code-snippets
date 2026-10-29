@@ -22,3 +22,9 @@ for (int i = n - 1; i >= 0; i--) {
     suff[i] = /* update(suff[i + 1], s[i]) */;
 }
 ```
+
+
+```
+pref[i] = cumulative result of s[0..i-1]
+suff[i] = cumulative result of s[i..n-1]
+```
