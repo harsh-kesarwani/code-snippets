@@ -1,4 +1,4 @@
-# BFS
+# BFS (Graph)
 
 - Time: O(V + E)
 - Space: O(V)
