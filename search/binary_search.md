@@ -37,87 +37,57 @@ Find boundary: the smallest index `i` such that a given condition is true
 ("first-true" template).
 
 - Condition must be monotonic -> result changes only in one direction, e.g. `FFFFTTTTTTT`.
+- Returns the first true index, or `n` if none.
+
+### Approach
 - `right` should start from `n` (not `n - 1`), as the answer can be `n`.
 - Invariant: the answer is always inside the closed range `[left, right]`.
 - If `left == right`, range collapsed, this must be the answer.
+- If `mid` is true, eliminate elements after `mid`, if false, eliminate elements upto `mid`.
 
 ```cpp
 int firstTrue(vector<int>& v) {
     int n = v.size(), left = 0, right = n;
     while (left < right) {
         int mid = left + (right - left) / 2;
-        if (/* condition(mid) */)
-            right = mid;      // mid might be first true
-        else
-            left = mid + 1;   // first true is after mid
+        if (/* v[mid] satisfies condition */)     // mid = T
+            right = mid;                          // elements after mid eliminated
+        else                                      // mid = F
+            left = mid + 1;                       // elements upto mid eliminated
     }
     return left;
 }
 ```
 
-### 2a. Lower Bound
+### Applications (Upper Bound / Lower Bound)
 
-Condition: `v[mid] >= target`.
+For a sorted array, replace the condition in generic template:
+
+#### Lower Bound
+Condition: `v[mid] >= target`
+
+#### Upper Bound
+Condition: `v[mid] > target`
+
+---
+
+### Alternative Approach
+
+- `left <= right`, `right = n - 1`; search the inclusive range `[left, right]`.
+- Invariant: indices before `left` are false; indices after `right` are true.
+- Stop when `left > right`; `left` is the answer.
+- True at `mid`: search earlier with `right = mid - 1`; false: `left = mid + 1`.
 
 ```cpp
-int lowerBound(vector<int>& v, int target) {
-    int n = v.size(), left = 0, right = n;
-    while (left < right) {
+int firstTrue(vector<int>& v) {
+    int n = v.size(), left = 0, right = n - 1;
+    while (left <= right) {
         int mid = left + (right - left) / 2;
-        if (v[mid] >= target)
-            right = mid;
+        if (/* v[mid] satisfies condition */)
+            right = mid - 1;
         else
             left = mid + 1;
     }
     return left;
-}
-```
-
-### 2b. Upper Bound
-
-Condition: `v[mid] > target`.
-
-```cpp
-int upperBound(vector<int>& v, int target) {
-    int n = v.size(), left = 0, right = n;
-    while (left < right) {
-        int mid = left + (right - left) / 2;
-        if (v[mid] > target)
-            right = mid;
-        else
-            left = mid + 1;
-    }
-    return left;
-}
-```
-
-## 3. Alternate way for lower/upper bound
-Another version for finding lower and upper bound using an inclusive/closed range `[low, high]`.
-
-### 3a. Upper Bound
-```cpp
-int lowerBound(int low, int high, int target) {
-    while (low <= high) {
-        int mid = low + (high - low) / 2;
-        if (v[mid] >= target)
-            high = mid - 1;
-        else
-            low = mid + 1;
-    }
-    return low;
-}
-```
-
-### 3b. Upper Bound
-```cpp
-int upperBound(int low, int high, int target) {
-    while (low <= high) {
-        int mid = low + (high - low) / 2;
-        if (v[mid] > target)
-            high = mid - 1;
-        else
-            low = mid + 1;
-    }
-    return low;
 }
 ```

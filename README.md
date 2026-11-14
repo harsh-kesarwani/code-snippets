@@ -25,11 +25,11 @@ Follow these so templates stay consistent (also for AI agents editing this repo)
 - [BFS](binarytree/bfs.md)
 - [DFS](binarytree/dfs.md)
 
-### Arrays
-- [Prefix / Suffix Arrays](arrays/prefix_suffix.md)
+### Array
+- [Prefix / Suffix Arrays](array/prefix_suffix.md)
 
-### Searching
-- [Binary Search](searching/binary_search.md)
+### Search
+- [Binary Search](search/binary_search.md)
 
 ### Math
 - [Sieve of Eratosthenes](math/sieve_of_eratosthenes.md)
